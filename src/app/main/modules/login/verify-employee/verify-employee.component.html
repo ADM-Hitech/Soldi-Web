@@ -1,0 +1,20 @@
+<div class="container module-container">
+    <div class="icon">
+        <img src="assets/images/logo.png" alt="">
+    </div>
+
+    <form class="content-form">
+        <p>Escribe tu CURP, tal cual aparece en tu INE</p>
+
+        <div class="content-inputs" [formGroup]="loginForm">
+            <mat-form-field class="input-full-width">
+                <mat-label>CURP</mat-label>
+                <input matInput formControlName="number">
+            </mat-form-field>
+        </div>
+
+        <div class="content-button">
+            <button mat-button (click)="initialProcess()" [disabled]="loginForm.invalid || loading" [class.spinner]="loading">Comenzar Registro</button>
+        </div>
+    </form>
+</div>

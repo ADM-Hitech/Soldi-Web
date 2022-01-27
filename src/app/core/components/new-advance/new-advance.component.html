@@ -1,0 +1,39 @@
+<div class="dialog-content-wrapper">
+    <mat-toolbar matDialogTitle class="m-0">
+        <div fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+            <span class="title dialog-title" [ngStyle]="{'font-family': 'MontserratBold'}">Pedir Paro</span>
+            <button mat-button class="toggle-button-navbar mat-icon-button" [mat-dialog-close]="false">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+
+    <div class="pl-25 pr-25 m-0" mat-dialog-content [formGroup]="form">
+        <h2>¿Cuánto dinero necesitas?</h2>
+
+        <div class="content-input">
+            <mat-form-field appearance="outline" style="width: 100%;">
+                <mat-icon matPrefix>attach_money</mat-icon>
+                <input matInput disabled="true" [value]="form.get('amount').value">
+                <mat-icon matSuffix>keyboard</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div fxLayout="row" class="mb-12" fxLayoutAlign="center center" *ngIf="loading">
+            <mat-spinner [diameter]="30"></mat-spinner>
+        </div>
+
+        <ng-container *ngIf="!loading">
+            <mat-slider formControlName="amount" style="width: 100%;" min="0" [max]="maxAmount" step="1000"></mat-slider>
+
+            <div class="mb-12" fxLayout="row" fxLayoutAlign="space-between center">
+                <span>$0</span>
+                <span>{{ maxAmount | currency }}</span>
+            </div>
+
+            <div class="ctn-btn mb-12" fxLayout="row" fxLayoutAlign="center center">
+                <button mat-button [disabled]="form.invalid || maxAmount <= 1" (click)="request()">SOLICITAR</button>
+            </div>
+        </ng-container>
+    </div>
+</div>

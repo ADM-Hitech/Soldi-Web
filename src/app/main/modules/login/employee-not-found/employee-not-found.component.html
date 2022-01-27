@@ -1,0 +1,39 @@
+<div class="container module-container">
+    <div class="icon">
+        <img src="assets/images/logo.png" alt="">
+    </div>
+
+    <form class="content-form">
+        <p>{{ message }}</p>
+
+        <div class="content-inputs" [formGroup]="verifyForm">
+            <mat-form-field class="input-full-width">
+                <mat-label>CURP</mat-label>
+                <input matInput formControlName="curp">
+                <mat-error *ngIf="getFielForm('curp').hasError('required')">
+                    La Curp es requerida
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input-full-width" *ngIf="showEmail">
+                <mat-label>EMAIL</mat-label>
+                <input matInput formControlName="email">
+                <mat-error *ngIf="getFielForm('email').invalid">
+                    Ingrese un email con un formato valido
+                </mat-error>
+                <mat-error *ngIf="getFielForm('email').hasError('required')">
+                    El email es requerido
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="content-button" fxLayout="column" fxLayoutGap="12px" *ngIf="!hideButton">
+            <button mat-button (click)="initialProcess()" [disabled]="verifyForm.invalid || loading" [class.spinner]="loading">INTENTAR NUEVAMENTE</button>
+            <button mat-button routerLink="/login/register">MI CURP ES CORRECTA</button>
+        </div>
+
+        <div class="content-button" fxLayout="column" fxLayoutGap="12px" *ngIf="showEmail">
+            <button mat-button (click)="updateEmail()" [disabled]="verifyForm.invalid || loading" [class.spinner]="loading">ACTUALIZAR CORREO</button>
+        </div>
+    </form>
+</div>
