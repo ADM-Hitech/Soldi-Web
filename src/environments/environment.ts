@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://192.168.15.7:5000/api/',
+  api: 'https://localhost:5001/api/',
   apiBinaria: 'https://apimarketplace.azure-api.net/',
   tokenBinariaOCR: '655ff315512745a69652bd815447c0f2',
   tokenBinariaFace: '238371a1791b4c518b26915f8d1863ac',

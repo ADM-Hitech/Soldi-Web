@@ -16,34 +16,34 @@ export class AppNavigationModel {
                     icon: '',
                     children: [
                         {
-                            id   : 'investment',
+                            id: 'investment',
                             title: 'Inversiones',
-                            type : 'item',
-                            url  : 'investment',
+                            type: 'item',
+                            url: 'investment',
                             icon: 'iconInversiont',
                             iconCustom: true
                         },
                         {
-                            id   : 'profile',
+                            id: 'profile',
                             title: 'Mi Perfil',
-                            type : 'item',
-                            url  : 'my-profile',
+                            type: 'item',
+                            url: 'my-profile',
                             icon: 'logoProfile',
                             iconCustom: true
                         },
                         {
-                            id   : 'technicalsupport',
+                            id: 'technicalsupport',
                             title: 'Soporte Técnico',
-                            type : 'item',
-                            url  : 'technical-support',
+                            type: 'item',
+                            url: 'technical-support',
                             icon: 'iconTechnicalSupport',
                             iconCustom: true
                         },
                         {
-                            id   : 'settings',
+                            id: 'settings',
                             title: 'Ajustes',
-                            type : 'item',
-                            url  : 'settings',
+                            type: 'item',
+                            url: 'settings',
                             icon: 'iconSettings',
                             iconCustom: true
                         }
@@ -78,26 +78,26 @@ export class AppNavigationModel {
                     icon: '',
                     children: [
                         {
-                            id   : 'my-advance',
+                            id: 'my-advance',
                             title: 'Adelantos',
-                            type : 'item',
-                            url  : 'solicitar-adelanto',
+                            type: 'item',
+                            url: 'solicitar-adelanto',
                             icon: 'iconInversiont',
                             iconCustom: true
                         },
                         {
-                            id   : 'technicalsupport',
+                            id: 'technicalsupport',
                             title: 'Soporte Técnico',
-                            type : 'item',
-                            url  : 'technical-support',
+                            type: 'item',
+                            url: 'technical-support',
                             icon: 'iconTechnicalSupport',
                             iconCustom: true
                         },
                         {
-                            id   : 'settings',
+                            id: 'settings',
                             title: 'Ajustes',
-                            type : 'item',
-                            url  : 'settings',
+                            type: 'item',
+                            url: 'settings',
                             icon: 'iconSettings',
                             iconCustom: true
                         }
@@ -113,48 +113,72 @@ export class AppNavigationModel {
             const menuUser: any = [];
             const allMenus: any = [
                 {
-                    id   : 'dashboard',
-                    title: 'Dashboard',
-                    type : 'item',
-                    url  : '/dashboard',
-                    icon: 'logoDashboard',
-                    iconCustom: true
+                    id: 'accredited',
+                    title: 'Acreditados',
+                    type: 'item',
+                    url: 'accredited',
+                    icon: 'group',
+                    iconCustom: false,
+                },
+                {
+                    id: 'estado-cuenta',
+                    title: 'Edo. de cuenta',
+                    type: 'item',
+                    url: 'estado-cuenta',
+                    icon: 'description',
+                    iconCustom: false,
+                },
+                {
+                    id: 'adelanto-cobrar',
+                    title: 'Adelanto x Cobrar',
+                    type: 'item',
+                    url: 'adelanto-cobrar',
+                    icon: 'pending_actions',
+                    iconCustom: false,
+                },
+                {
+                    id: 'control-fondeo',
+                    title: 'Control de Fondeo',
+                    type: 'item',
+                    url: 'control-fondeo',
+                    icon: 'price_change',
+                    iconCustom: false,
                 }
             ];
-
+/* 
             if (modules.some(item => item.Module === 'Crear Usuario' || item.module === 'Crear Usuario')) {
                 menuUser.push({
-                    id   : 'create-user',
+                    id: 'create-user',
                     title: 'Crear Usuario',
-                    type : 'item',
-                    url  : 'users/create-users'
+                    type: 'item',
+                    url: 'users/create-users'
                 });
             }
 
             if (modules.some(item => item.Module === 'Inversionistas' || item.module === 'Inversionistas')) {
                 menuUser.push({
-                    id   : 'inversionistas',
+                    id: 'inversionistas',
                     title: 'Inversionistas',
-                    type : 'item',
-                    url  : 'users/investor'
+                    type: 'item',
+                    url: 'users/investor'
                 });
             }
 
             if (modules.some(item => item.Module === 'Acreditados' || item.module === 'Acreditados')) {
                 menuUser.push({
-                    id   : 'acredited',
+                    id: 'acredited',
                     title: 'Acreditados',
-                    type : 'item',
-                    url  : 'users/accredited'
+                    type: 'item',
+                    url: 'users/accredited'
                 });
             }
 
             if (modules.some(item => item.Module === 'Administradores' || item.module === 'Administradores')) {
                 menuUser.push({
-                    id   : 'administrator',
+                    id: 'administrator',
                     title: 'Administradores',
-                    type : 'item',
-                    url  : 'users/administrator'
+                    type: 'item',
+                    url: 'users/administrator'
                 });
 
                 allMenus.push({
@@ -194,10 +218,10 @@ export class AppNavigationModel {
 
             if (modules.some(item => item.Module === 'Control de Fondeo' || item.module === 'Control de Fondeo')) {
                 allMenus.push({
-                    id   : 'control-fondeo',
+                    id: 'control-fondeo',
                     title: 'Control de Fondeo',
-                    type : 'item',
-                    url  : 'fondeo-control',
+                    type: 'item',
+                    url: 'fondeo-control',
                     icon: 'logoControls',
                     iconCustom: true
                 });
@@ -205,10 +229,10 @@ export class AppNavigationModel {
 
             if (modules.some(item => item.Module === 'Adelantos Por Cobrar' || item.module === 'Adelantos Por Cobrar')) {
                 allMenus.push({
-                    id   : 'advance-paymed',
+                    id: 'advance-paymed',
                     title: 'Adelantos por Cobrar',
-                    type : 'item',
-                    url  : 'advances-receivable',
+                    type: 'item',
+                    url: 'advances-receivable',
                     icon: 'logoAdvance',
                     iconCustom: true
                 });
@@ -216,24 +240,24 @@ export class AppNavigationModel {
 
             allMenus.push(
                 {
-                    id   : 'technicalsupport',
+                    id: 'technicalsupport',
                     title: 'Soporte Técnico',
-                    type : 'item',
-                    url  : 'technical-support',
+                    type: 'item',
+                    url: 'technical-support',
                     icon: 'iconTechnicalSupport',
                     iconCustom: true
                 },
                 {
-                    id   : 'settings',
+                    id: 'settings',
                     title: 'Ajustes',
-                    type : 'item',
-                    url  : 'settings',
+                    type: 'item',
+                    url: 'settings',
                     icon: 'iconSettings',
                     iconCustom: true
                 }
             );
 
-            this.model = [
+ */            this.model = [
                 {
                     id: 'menu',
                     title: 'MENÚ',
