@@ -1,42 +1,33 @@
 @import "../../../core/scss/app";
-
 app-technical-support {
     .container {
         padding: 25px;
         overflow: auto;
-
         .content-breadcrumbs {
-            
             h1 {
                 color: #41434C;
                 font-size: 27px;
             }
         }
     }
-
     .content {
         margin-top: 25px;
         background-color: white;
         border-radius: 10px;
-
         hr {
             margin: 0;
             color: #dee3ed;
         }
-
         .content-title {
             padding: 20px;
-
             .title {
-                
                 h3 {
                     margin: 0;
                     color: #41434C;
                     font-size: 20px;
                 }
-    
                 .line {
-                    background-color: #65BCB5;
+                    background-color: #98c0e0;
                     width: 78px;
                     height: 5px;
                     display: block;
@@ -44,17 +35,14 @@ app-technical-support {
                 }
             }
         }
-
         .content-widgets {
             padding: 20px;
             display: flex;
             justify-content: space-between;
             gap: 24px;
-
             @include media-breakpoint-down('sm') {
                 flex-direction: column;
             }
-
             .widget-support {
                 background-color: #eff4ff;
                 padding: 25px;
@@ -62,17 +50,14 @@ app-technical-support {
                 align-items: center;
                 border-radius: 7px;
                 border: 2px solid #dee3ed;
-
                 @include media-breakpoint-down('sm') {
                     flex-direction: column;
                 }
-
                 &:nth-child(2) {
                     @include media-breakpoint-down('sm') {
                         margin: 25px 0;
                     }
                 }
-
                 .content-icon {
                     .circle-icon {
                         width: 75px;
@@ -80,9 +65,8 @@ app-technical-support {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        background: linear-gradient(47deg, #4F96A1 14%, #65BCB5 70%, #65BCB5 0%);
+                        background: linear-gradient(47deg, #004B87 14%, #98c0e0 70%, #98c0e0 0%);
                         border-radius: 45px;
-
                         .mat-icon {
                             color: white;
                             width: 40px;
@@ -90,7 +74,6 @@ app-technical-support {
                         }
                     }
                 }
-
                 &.whatsapp {
                     .content-icon {
                         .circle-icon {
@@ -98,28 +81,22 @@ app-technical-support {
                         }
                     }
                 }
-
                 .content-text {
                     margin-left: 25px;
-                    
                     @include media-breakpoint-down('sm') {
                         margin-top: 15px;
                         margin-left: 0;
                         text-align: center;
                     }
-
                     p {
                         margin: 0;
                         color: #41434C;
-
                         &:last-child {
                             font-size: 17px;
-
                             @include media-breakpoint-down('sm') {
                                 font-size: 17px;
                             }
                         }
-
                         &.text-email {
                             @include media-breakpoint-down('sm') {
                                 font-size: 100%;

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AccreditedLicenseComponent } from './main/modules/license/accredited-license/accredited_license.component';
+import { LicenseFundingControlComponent } from './main/modules/license/license-funding-control/license-funding-control.component';
 
 const routes: Routes = [
   {
@@ -73,12 +75,26 @@ const routes: Routes = [
     loadChildren: () => import('./main/modules/license/license.module').then(module => module.LicenseModule)
   },
   {
-    path: 'licencias/:licenseid/estado-cuenta',
+    path: 'estado-cuenta',
     loadChildren: () => import('./main/modules/account-status-license/account-status-license.module').then(module => module.AccountStatusLicenseModule)
   },
   {
-    path: 'licencias/:licenseid/adelanto-cobrar',
+    path: 'adelanto-cobrar',
     loadChildren: () => import('./main/modules/advances-receivable/advances-receivable.module').then(module => module.AdvancesReceivableModule)
+  },
+  {
+    path: 'accredited',
+    component: AccreditedLicenseComponent,
+    data: {
+      roles: ['Administrador', 'License']
+    }
+  },
+  {
+    path: 'control-fondeo',
+    component: LicenseFundingControlComponent,
+    data: {
+      roles: ['Administrador', 'License']
+    }
   },
   {
     path: 'registros-pendientes',

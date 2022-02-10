@@ -1,49 +1,41 @@
 @import "../../../core/scss/app";
-
 app-modal-contact {
     .dialog-content-contact {
         color: white;
-        background: rgba(51,51,255,1);
-        background: -moz-linear-gradient(45deg, rgba(51,51,255,1) 0%, rgba(51,204,255,1) 69%, rgba(51,204,255,1) 100%);
-        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(51,51,255,1)), color-stop(69%, rgba(51,204,255,1)), color-stop(100%, rgba(51,204,255,1)));
-        background: -webkit-linear-gradient(45deg, rgba(51,51,255,1) 0%, rgba(51,204,255,1) 69%, rgba(51,204,255,1) 100%);
-        background: -o-linear-gradient(45deg, rgba(51,51,255,1) 0%, rgba(51,204,255,1) 69%, rgba(51,204,255,1) 100%);
-        background: -ms-linear-gradient(45deg, rgba(51,51,255,1) 0%, rgba(51,204,255,1) 69%, rgba(51,204,255,1) 100%);
-        background: linear-gradient(45deg, rgba(51,51,255,1) 0%, rgba(51,204,255,1) 69%, rgba(51,204,255,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41434C', endColorstr='#65BCB5', GradientType=1 );
+        background: rgba(51, 51, 255, 1);
+        background: -moz-linear-gradient(45deg, rgba(51, 51, 255, 1) 0%, rgba(51, 204, 255, 1) 69%, rgba(51, 204, 255, 1) 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(51, 51, 255, 1)), color-stop(69%, rgba(51, 204, 255, 1)), color-stop(100%, rgba(51, 204, 255, 1)));
+        background: -webkit-linear-gradient(45deg, rgba(51, 51, 255, 1) 0%, rgba(51, 204, 255, 1) 69%, rgba(51, 204, 255, 1) 100%);
+        background: -o-linear-gradient(45deg, rgba(51, 51, 255, 1) 0%, rgba(51, 204, 255, 1) 69%, rgba(51, 204, 255, 1) 100%);
+        background: -ms-linear-gradient(45deg, rgba(51, 51, 255, 1) 0%, rgba(51, 204, 255, 1) 69%, rgba(51, 204, 255, 1) 100%);
+        background: linear-gradient(45deg, rgba(51, 51, 255, 1) 0%, rgba(51, 204, 255, 1) 69%, rgba(51, 204, 255, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41434C', endColorstr='#98c0e0', GradientType=1);
     }
-
     .dialog-title {
         color: white !important;
     }
-
     .mat-dialog-container mat-toolbar {
         border-bottom: none !important;
     }
-
     .mat-dialog-content {
         padding-top: 10px;
     }
-
     mat-form-field {
         width: 100%;
     }
-
     .content-form {
         overflow: hidden;
         @include media-breakpoint-down('sm') {
             overflow: auto;
         }
-
         .content-field {
             width: 100%;
         }
-
         .mat-checkbox-label {
-            a, span {
+            a,
+            span {
                 color: white;
             }
-
             @include media-breakpoint-down('sm') {
                 display: flex;
                 width: 235px;
@@ -51,7 +43,6 @@ app-modal-contact {
                 flex-wrap: wrap;
                 font-size: 13px;
             }
-
             @include media-breakpoint-down('md') {
                 display: flex;
                 width: 235px;
@@ -60,20 +51,17 @@ app-modal-contact {
                 font-size: 13px;
             }
         }
-
         .mat-form-field-label {
             mat-label {
                 color: white;
             }
         }
-
         .p-l-12-5 {
             padding-left: 12.5px;
             @include media-breakpoint-down('sm') {
                 padding-left: 0px;
             }
         }
-
         .p-r-12-5 {
             padding-right: 12.5px;
             @include media-breakpoint-down('sm') {
@@ -81,7 +69,6 @@ app-modal-contact {
             }
         }
     }
-
     .mat-dialog-actions {
         .mat-button {
             background-color: #41434C;
@@ -92,13 +79,11 @@ app-modal-contact {
             margin-bottom: 25px;
         }
     }
-
     .mat-select-value {
         .mat-select-value-text {
             color: white;
         }
     }
-
     .mat-button[disabled][disabled] {
         color: white;
         opacity: .7;

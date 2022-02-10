@@ -15,11 +15,11 @@ export class LicenseService {
     }
 
     public fetchTableAccredited(page: number = 1, numrecord: number = 20, filter: string = '', licenseId: number): Observable<any> {
-        return this.http.get(`${this.constant.api}License/Accredited?Page=${page}&NumRecord=${numrecord}&Filter=${filter}&id=${licenseId}`);
+        return this.http.get(`${this.constant.api}License/Accredited?Page=${page}&NumRecord=${numrecord}&Filter=${filter}`);
     }
 
     public fetchFounding(id: number, year: number, month: number): Observable<any> {
-        return this.http.get(`${this.constant.api}License/FundingControl?LicenseId=${id}&Year=${year}&Month=${month}`);
+        return this.http.get(`${this.constant.api}License/FundingControl?Year=${year}&Month=${month}`);
     }
 
     public getInstitutions(): Observable<any> {

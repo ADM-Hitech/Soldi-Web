@@ -24,7 +24,7 @@ export class InterceptorService implements HttpInterceptor {
     let headersNew = new HttpHeaders();
     let authorizedRequest: HttpRequest<any> = req.clone();
 
-    headersNew = headersNew.append('LicenseName', 'SNAC');
+    headersNew = headersNew.append('LicenseName', 'SOLDI');
 
     if (!this.auth.isAuthenticated()) {
       if (this.router.url !== '/' && !this.router.url.includes('login')) {

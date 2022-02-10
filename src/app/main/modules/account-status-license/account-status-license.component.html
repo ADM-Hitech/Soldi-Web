@@ -1,7 +1,7 @@
 <div class="container module-container">
     <div class="content-breadcrumbs">
         <h1 [ngStyle]="{'font-family': 'MontserratBold'}">Estado de cuenta</h1>
-        <div class="breadcrumbs">SNAC > Licencia > Estado de cuenta</div>
+        <div class="breadcrumbs">SOLDI > Estado de cuenta</div>
     </div>
     <div class="content-body mat-elevation-z3">
         <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutAlign="space-between end">
@@ -16,8 +16,7 @@
                     <mat-label>Periodo (MM/YYYY)</mat-label>
                     <input matInput [matDatepicker]="dp" placeholder="Mes y Año" [formControl]="date">
                     <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-                    <mat-datepicker #dp startView="multi-year" panelClass="example-month-picker" (yearSelected)="chosenYearHandler($event)"
-                    (monthSelected)="chosenMonthHandler($event, dp)">
+                    <mat-datepicker #dp startView="multi-year" panelClass="example-month-picker" (yearSelected)="chosenYearHandler($event)" (monthSelected)="chosenMonthHandler($event, dp)">
                     </mat-datepicker>
                 </mat-form-field>
 

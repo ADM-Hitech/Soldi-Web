@@ -1,7 +1,7 @@
 <div class="container module-container" style=" overflow: auto;">
     <div class="content-breadcrumbs">
         <h1 [ngStyle]="{'font-family': 'MontserratBold'}">Usuarios</h1>
-        <div class="breadcrumbs">SNAC > Usuarios > Crear usuario</div>
+        <div class="breadcrumbs">SOLDI > Usuarios > Crear usuario</div>
     </div>
     <div class="content-forms mat-elevation-z3">
         <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutAlign="space-between">
@@ -23,13 +23,13 @@
                         <button mat-flat-button color="accent" [ngClass]="{'active': activeMenu('group-users'), 'inactive': !activeMenu('group-users')}" (click)="goTo('users/create-users/group-users')">Crear Grupo de Usuarios</button>
                     </div>
                     <div class="option">
-                        <button mat-flat-button color="accent" [ngClass]="{'active': activeMenu('group-snac'), 'inactive': !activeMenu('group-snac')}" (click)="goTo('users/create-users/group-snac')">Cargar Empleados SNAC</button>
+                        <button mat-flat-button color="accent" [ngClass]="{'active': activeMenu('group-snac'), 'inactive': !activeMenu('group-snac')}" (click)="goTo('users/create-users/group-snac')">Cargar Empleados SOLDI</button>
                     </div>
                 </div>
             </div>
             <div fxFlex="80">
                 <div class="content-child">
-                    <router-outlet  ></router-outlet>
+                    <router-outlet></router-outlet>
                 </div>
             </div>
         </div>
