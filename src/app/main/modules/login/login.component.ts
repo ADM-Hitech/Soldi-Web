@@ -33,8 +33,7 @@ export class LoginComponent implements OnInit {
     private cookieService: CookieService,
     private readonly matDialog: MatDialog,
     private snackBar: MatSnackBar
-  )
-  {
+  ) {
     this.loginFormErrors = {
       mail: {},
       password: {},
@@ -94,40 +93,41 @@ export class LoginComponent implements OnInit {
 
     this.rest.login(login,
       this.loginForm.get('rememberLogin').value as boolean).subscribe(
-        (response: {success: boolean, type: number, firstLogin: boolean, token: string}) => {
-        if (response.success) {
+        (response: { success: boolean, type: number, firstLogin: boolean, token: string }) => {
+          if (response.success) {
 
-          if (response.firstLogin) {
-            this.showConvenio(response.token);
-          } else {
-            if (response.type === 2) {
-              this.router.navigate(['/investment']);
-            } else if (response.type === 4) {
-              this.router.navigate(['/licencias']);
-            } else if (response.type === 3) {
-              this.router.navigate(['/solicitar-adelanto']);
+            if (response.firstLogin) {
+              this.showConvenio(response.token);
             } else {
-              this.router.navigate(['/dashboard']);
+              /* if (response.type === 2) {
+                this.router.navigate(['/investment']);
+              } else if (response.type === 4) {
+                this.router.navigate(['/licencias']);
+              } else if (response.type === 3) {
+                this.router.navigate(['/solicitar-adelanto']);
+              } else {
+                this.router.navigate(['/accredited']);
+              } */
+              this.router.navigate(['/accredited']);
             }
+          } else {
+            this.loginError = 'El usuario o contraseña son incorrectos';
           }
-        } else {
-          this.loginError = 'El usuario o contraseña son incorrectos';
-        }
 
-        this.loading = false;
-      }, (error) => {
-        this.loading = false;
-        if ((error?.message as string).includes('registro') || (error?.message as string).includes('siendo aprobados')) {
-          this.showAlert('Alerta', error.message, 'warning');
+          this.loading = false;
+        }, (error) => {
+          this.loading = false;
+          if ((error?.message as string).includes('registro') || (error?.message as string).includes('siendo aprobados')) {
+            this.showAlert('Alerta', error.message, 'warning');
 
-          if ((error?.message as string).includes('registro') ) {
-            this.router.navigate(['/login/snac']);
+            if ((error?.message as string).includes('registro')) {
+              this.router.navigate(['/login/snac']);
+            }
+
+          } else {
+            this.showAlert('ERROR', error.message, 'error');
           }
-          
-        } else {
-          this.showAlert('ERROR', error.message, 'error');
-        }
-      });
+        });
   }
 
   public changePassword(): void {
@@ -171,16 +171,16 @@ export class LoginComponent implements OnInit {
 
   private showAlert(message: string, submessage: string, type: 'success' | 'error' | 'warning'): void {
     this.snackBar.openFromComponent(SnakBarAlertComponent, {
-        data: {
-          message: message,
-          subMessage: submessage,
-          type
-        },
-        panelClass: 'snack-message',
-        horizontalPosition: 'right',
-        verticalPosition: 'top',
-        duration: 3300
+      data: {
+        message: message,
+        subMessage: submessage,
+        type
+      },
+      panelClass: 'snack-message',
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      duration: 3300
     });
-}
+  }
 
 }
