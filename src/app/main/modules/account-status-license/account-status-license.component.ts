@@ -79,7 +79,6 @@ export class AccountStatusLicenseComponent {
             this.loading = false;
             this.dataSource.data = response.data.data;
             this.totalRow = response.data.totalRecord;
-
             if (this.licensePriceRange.length >= 0) {
                 this.fetchLicensePriceRange();
             }
@@ -109,7 +108,7 @@ export class AccountStatusLicenseComponent {
 
             if (cost.length > 0) {
                 this.totalForOperation = cost[0].cost;
-            }
+            } 
         });
     }
 
